@@ -2,13 +2,13 @@
 #define _without_check 1
 
 Name:		perl-%{realname}
-Version:    3.63
+Version:    4.03
 Release:    %mkrel 1
 Epoch: 2
 License:	GPL or Artistic
 Group:		Development/Perl
 Summary:    Coroutine process abstraction
-Source0:    ftp://ftp.perl.org/pub/CPAN/modules/by-module/Coro/Coro-%{version}.tar.bz2
+Source0:    ftp://ftp.perl.org/pub/CPAN/modules/by-module/Coro/Coro-%{version}.tar.gz
 Url:		http://search.cpan.org/dist/%{realname}
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	perl-devel
