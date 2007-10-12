@@ -2,7 +2,7 @@
 #define _without_check 1
 
 Name:		perl-%{realname}
-Version:    4.03
+Version:    4.11
 Release:    %mkrel 1
 Epoch: 2
 License:	GPL or Artistic
