@@ -10,6 +10,7 @@ Group:		Development/Perl
 Summary:    Coroutine process abstraction
 Source0:    ftp://ftp.perl.org/pub/CPAN/modules/by-module/Coro/Coro-%{version}.tar.gz
 Url:		http://search.cpan.org/dist/%{realname}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	perl-devel
 BuildRequires:  perl-IO-AIO
 BuildRequires:  perl-AnyEvent >= 1:2.8
