@@ -3,7 +3,7 @@
 
 Name:		perl-%{realname}
 Version:    4.36
-Release:    %mkrel 2
+Release:    %mkrel 3
 Epoch: 2
 License:	GPL or Artistic
 Group:		Development/Perl
