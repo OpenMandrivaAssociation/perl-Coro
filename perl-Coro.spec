@@ -1,5 +1,5 @@
 %define realname   Coro
-%define _without_check 1
+#define _without_check 1
 
 Name:		perl-%{realname}
 Version:    4.36
