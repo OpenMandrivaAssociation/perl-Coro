@@ -1,9 +1,9 @@
 %define realname   Coro
-#define _without_check 1
+%define _without_check 1
 
 Name:		perl-%{realname}
 Version:    4.36
-Release:    %mkrel 3
+Release:    %mkrel 2
 Epoch: 2
 License:	GPL or Artistic
 Group:		Development/Perl
