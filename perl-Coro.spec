@@ -2,8 +2,8 @@
 #define _without_check 1
 
 Name:		perl-%{realname}
-Version:    4.36
-Release:    %mkrel 2
+Version:    4.37
+Release:    %mkrel 1
 Epoch: 2
 License:	GPL or Artistic
 Group:		Development/Perl
@@ -15,7 +15,7 @@ BuildRequires:	perl-devel
 BuildRequires:  perl-IO-AIO
 BuildRequires:  perl-AnyEvent >= 1:2.8
 #gw the test EV/t/01_unblock fails
-#BuildRequires:  perl-EV
+#BuildRequires:  perl-EV >= 2.0
 #gw this is only needed for make test
 %{!?_without_check:BuildRequires:  perl-AnyEvent-Coro}
 %define _requires_exceptions perl(Exporter::)\\|perl(Coro::Socket::)
