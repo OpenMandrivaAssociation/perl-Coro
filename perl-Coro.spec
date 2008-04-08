@@ -2,7 +2,7 @@
 #define _without_check 1
 
 Name:		perl-%{realname}
-Version:    4.37
+Version:    4.49
 Release:    %mkrel 1
 Epoch: 2
 License:	GPL or Artistic
@@ -14,7 +14,8 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	perl-devel
 BuildRequires:  perl-IO-AIO
 BuildRequires:  perl-AnyEvent >= 1:2.8
-#gw the test EV/t/01_unblock fails
+#gw the test EV/t/01_unblock fails in 4.37:
+# http://rt.cpan.org/Ticket/Display.html?id=32475
 #BuildRequires:  perl-EV >= 2.0
 #gw this is only needed for make test
 %{!?_without_check:BuildRequires:  perl-AnyEvent-Coro}
