@@ -2,7 +2,7 @@
 #define _without_check 1
 
 Name:		perl-%{realname}
-Version:    4.51
+Version:    4.72
 Release:    %mkrel 1
 Epoch: 2
 License:	GPL or Artistic
@@ -13,18 +13,25 @@ Url:		http://search.cpan.org/dist/%{realname}
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	perl-devel
 BuildRequires:  perl-IO-AIO
-BuildRequires:  perl-AnyEvent >= 1:2.8
+BuildRequires:  perl-AnyEvent >= 1:4.05
 #gw the test EV/t/01_unblock fails in 4.37:
 # http://rt.cpan.org/Ticket/Display.html?id=32475
 #BuildRequires:  perl-EV >= 2.0
-#gw this is only needed for make test
-%{!?_without_check:BuildRequires:  perl-AnyEvent-Coro}
 %define _requires_exceptions perl(Exporter::)\\|perl(Coro::Socket::)
 
 %description
 This module collection manages coroutines. Coroutines are similar to
 threads but don't run in parallel.
 
+
+%package AnyEvent
+Summary: Use Coro within an AnyEvent environment
+Group: Development/Perl
+
+%description AnyEvent
+This module integrates coroutines into any event loop supported by
+AnyEvent, combining event-based programming with coroutine-based
+programming in a natural way.
 
 %package BDB
 Summary: Truly asynchronous bdb access
@@ -36,6 +43,7 @@ This module implements a thin wrapper around the BDB module.
 Each BDB request that could block and doesn't get passed a callback
 will normally block all coroutines. after loading this module, this
 will no longer be the case.
+
 
 %prep
 %setup -q -n Coro-%{version} 
@@ -104,3 +112,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %{perl_vendorarch}/Coro/BDB.pm
 %{_mandir}/man3/Coro::BDB*
+
+%files AnyEvent
+%defattr(-,root,root)
+%{perl_vendorarch}/Coro/AnyEvent.pm
+%{_mandir}/man3/Coro::AnyEvent*
