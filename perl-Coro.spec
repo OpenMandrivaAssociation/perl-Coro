@@ -2,7 +2,7 @@
 #define _without_check 1
 
 Name:		perl-%{realname}
-Version:    5.0
+Version:    5.1
 Release:    %mkrel 1
 Epoch: 2
 License:	GPL or Artistic
@@ -73,6 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Coro/Debug.pm
 %{perl_vendorarch}/Coro/Event.pm
 %{perl_vendorarch}/Coro/Handle.pm
+%{perl_vendorarch}/Coro/Intro.pod
 %{perl_vendorarch}/Coro/LWP.pm
 %{perl_vendorarch}/Coro/MakeMaker.pm
 %{perl_vendorarch}/Coro/RWLock.pm
@@ -88,25 +89,26 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Coro/Util.pm
 %{perl_vendorarch}/Coro.pm
 %{perl_vendorarch}/auto
-%_mandir/man3/Coro.3pm.lzma
-%_mandir/man3/Coro::AIO.3pm.lzma
-%_mandir/man3/Coro::Channel.3pm.lzma
-%_mandir/man3/Coro::Debug.3pm.lzma
-%_mandir/man3/Coro::Event.3pm.lzma
-%_mandir/man3/Coro::Handle.3pm.lzma
-%_mandir/man3/Coro::LWP.3pm.lzma
-%_mandir/man3/Coro::MakeMaker.3pm.lzma
-%_mandir/man3/Coro::RWLock.3pm.lzma
-%_mandir/man3/Coro::Select.3pm.lzma
-%_mandir/man3/Coro::Semaphore.3pm.lzma
-%_mandir/man3/Coro::SemaphoreSet.3pm.lzma
-%_mandir/man3/Coro::Signal.3pm.lzma
-%_mandir/man3/Coro::Socket.3pm.lzma
-%_mandir/man3/Coro::Specific.3pm.lzma
-%_mandir/man3/Coro::State.3pm.lzma
-%_mandir/man3/Coro::Storable.3pm.lzma
-%_mandir/man3/Coro::Timer.3pm.lzma
-%_mandir/man3/Coro::Util.3pm.lzma
+%_mandir/man3/Coro.3pm*
+%_mandir/man3/Coro::AIO.3pm*
+%_mandir/man3/Coro::Channel.3pm*
+%_mandir/man3/Coro::Debug.3pm*
+%_mandir/man3/Coro::Event.3pm*
+%_mandir/man3/Coro::Handle.3pm*
+%_mandir/man3/Coro::Intro.3pm*
+%_mandir/man3/Coro::LWP.3pm*
+%_mandir/man3/Coro::MakeMaker.3pm*
+%_mandir/man3/Coro::RWLock.3pm*
+%_mandir/man3/Coro::Select.3pm*
+%_mandir/man3/Coro::Semaphore.3pm*
+%_mandir/man3/Coro::SemaphoreSet.3pm*
+%_mandir/man3/Coro::Signal.3pm*
+%_mandir/man3/Coro::Socket.3pm*
+%_mandir/man3/Coro::Specific.3pm*
+%_mandir/man3/Coro::State.3pm*
+%_mandir/man3/Coro::Storable.3pm*
+%_mandir/man3/Coro::Timer.3pm*
+%_mandir/man3/Coro::Util.3pm*
 
 %files BDB
 %defattr(-,root,root)
