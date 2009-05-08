@@ -1,6 +1,7 @@
 %define realname   Coro
 #define _without_check 1
 %define ver 5.131
+%define perl_convert_version() %(perl -Mversion -le '$v=version->new(%{1})->normal; $v=~s/^v//; print $v')
 
 Name:		perl-%{realname}
 Version:    %perl_convert_version %ver
