@@ -5,7 +5,7 @@
 
 Name:		perl-%{realname}
 Version:    %perl_convert_version %ver
-Release:    %mkrel 1
+Release:    %mkrel 2
 Epoch: 2
 License:	GPL or Artistic
 Group:		Development/Perl
