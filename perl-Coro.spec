@@ -1,14 +1,15 @@
 %define realname   Coro
 #define _without_check 1
+%define ver 5.131
 
 Name:		perl-%{realname}
-Version:    5.131
+Version:    %perl_convert_version %ver
 Release:    %mkrel 1
 Epoch: 2
 License:	GPL or Artistic
 Group:		Development/Perl
 Summary:    Coroutine process abstraction
-Source0:    ftp://ftp.perl.org/pub/CPAN/modules/by-module/Coro/Coro-%{version}.tar.gz
+Source0:    ftp://ftp.perl.org/pub/CPAN/modules/by-module/Coro/Coro-%{ver}.tar.gz
 Url:		http://search.cpan.org/dist/%{realname}
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	perl-devel
@@ -47,7 +48,7 @@ will no longer be the case.
 
 
 %prep
-%setup -q -n Coro-%{version} 
+%setup -q -n Coro-%{ver} 
 
 %build
 echo -e  "n\nu\n" | %{__perl} Makefile.PL INSTALLDIRS=vendor
