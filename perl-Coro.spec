@@ -76,7 +76,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Coro/CoroAPI.h
 %{perl_vendorarch}/Coro/Debug.pm
 %{perl_vendorarch}/Coro/Event.pm
-%{perl_vendorarch}/Coro/EV.pm
 %{perl_vendorarch}/Coro/Handle.pm
 %{perl_vendorarch}/Coro/Intro.pod
 %{perl_vendorarch}/Coro/LWP.pm
@@ -99,7 +98,6 @@ rm -rf $RPM_BUILD_ROOT
 %_mandir/man3/Coro::Channel.3pm*
 %_mandir/man3/Coro::Debug.3pm*
 %_mandir/man3/Coro::Event.3pm*
-%_mandir/man3/Coro::EV.3pm*
 %_mandir/man3/Coro::Handle.3pm*
 %_mandir/man3/Coro::Intro.3pm*
 %_mandir/man3/Coro::LWP.3pm*
