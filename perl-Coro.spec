@@ -1,21 +1,23 @@
-%define realname   Coro
+%define upstream_name    Coro
+%define upstream_version 5.151
 #define _without_check 1
-%define upstream_version 5.132
 
-Name:		perl-%{realname}
+Name:		perl-%{upstream_name}
 Version:    %perl_convert_version %upstream_version
 Release:    %mkrel 1
-Epoch: 2
-License:	GPL or Artistic
-Group:		Development/Perl
+Epoch:      2
+
 Summary:    Coroutine process abstraction
-Source0:    ftp://ftp.perl.org/pub/CPAN/modules/by-module/Coro/Coro-%{ver}.tar.gz
-Url:		http://search.cpan.org/dist/%{realname}
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:    ftp://ftp.perl.org/pub/CPAN/modules/by-module/Coro/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:	perl-devel
 BuildRequires:  perl-IO-AIO
 BuildRequires:  perl-AnyEvent >= 1:4.05
 BuildRequires:  perl-Guard
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 #gw the test EV/t/01_unblock fails in 4.37:
 # http://rt.cpan.org/Ticket/Display.html?id=32475
 #BuildRequires:  perl-EV >= 2.0
@@ -48,7 +50,7 @@ will no longer be the case.
 
 
 %prep
-%setup -q -n Coro-%{ver} 
+%setup -q -n %{upstream_name}-%{upstream_version} 
 
 %build
 echo -e  "n\nu\n" | %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -74,6 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Coro/CoroAPI.h
 %{perl_vendorarch}/Coro/Debug.pm
 %{perl_vendorarch}/Coro/Event.pm
+%{perl_vendorarch}/Coro/EV.pm
 %{perl_vendorarch}/Coro/Handle.pm
 %{perl_vendorarch}/Coro/Intro.pod
 %{perl_vendorarch}/Coro/LWP.pm
@@ -96,6 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 %_mandir/man3/Coro::Channel.3pm*
 %_mandir/man3/Coro::Debug.3pm*
 %_mandir/man3/Coro::Event.3pm*
+%_mandir/man3/Coro::EV.3pm*
 %_mandir/man3/Coro::Handle.3pm*
 %_mandir/man3/Coro::Intro.3pm*
 %_mandir/man3/Coro::LWP.3pm*
