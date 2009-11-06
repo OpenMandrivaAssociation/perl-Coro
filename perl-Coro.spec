@@ -1,5 +1,5 @@
 %define upstream_name    Coro
-%define upstream_version 5.17
+%define upstream_version 5.2
 #define _without_check 1
 
 Name:		perl-%{upstream_name}
@@ -17,6 +17,7 @@ BuildRequires:	perl-devel
 BuildRequires:  perl-IO-AIO
 BuildRequires:  perl-AnyEvent >= 1:4.05
 BuildRequires:  perl-Guard
+BuildRequires:  perl-common-sense
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 #gw the test EV/t/01_unblock fails in 4.37:
 # http://rt.cpan.org/Ticket/Display.html?id=32475
