@@ -1,5 +1,5 @@
 %define upstream_name    Coro
-%define upstream_version 5.2
+%define upstream_version 5.21
 #define _without_check 1
 
 Name:		perl-%{upstream_name}
@@ -11,7 +11,7 @@ Summary:    Coroutine process abstraction
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:    ftp://ftp.perl.org/pub/CPAN/modules/by-module/Coro/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:    http://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:  perl-IO-AIO
