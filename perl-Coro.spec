@@ -1,5 +1,5 @@
 %define upstream_name    Coro
-%define upstream_version 5.372
+%define upstream_version 6.0
 #define _without_check 1
 
 Name:		perl-%{upstream_name}
@@ -94,6 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Coro/Util.pm
 %{perl_vendorarch}/Coro.pm
 %{perl_vendorarch}/auto
+%{perl_vendorarch}/jit-*.pl
 %_mandir/man3/Coro.3pm*
 %_mandir/man3/Coro::AIO.3pm*
 %_mandir/man3/Coro::Channel.3pm*
