@@ -4,7 +4,7 @@
 
 Name:		perl-%{upstream_name}
 Version:    %perl_convert_version %upstream_version
-Release:    %mkrel 1
+Release:    %mkrel 2
 Epoch:      2
 
 Summary:    Coroutine process abstraction
@@ -52,6 +52,8 @@ will no longer be the case.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version} 
+#gw wrong shell bang:
+sed -i "s^/opt/bin/perl^%_bindir/perl^" Coro/jit*pl
 
 %build
 echo -e  "n\nu\n" | %{__perl} Makefile.PL INSTALLDIRS=vendor
