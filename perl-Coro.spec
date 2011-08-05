@@ -1,5 +1,5 @@
 %define upstream_name    Coro
-%define upstream_version 6.04
+%define upstream_version 6.05
 #define _without_check 1
 
 Name:		perl-%{upstream_name}
