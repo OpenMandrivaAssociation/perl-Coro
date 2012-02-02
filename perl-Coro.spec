@@ -1,24 +1,23 @@
-%define upstream_name    Coro
-%define upstream_version 6.07
+%define	module	Coro
+%define	upstream_version 6.07
 #define _without_check 1
 
-Name:		perl-%{upstream_name}
-Version:    %perl_convert_version %upstream_version
+Name:		perl-%{module}
+Version:	%perl_convert_version %upstream_version
 Release:	4
-Epoch:      2
+Epoch:		2
 
-Summary:    Coroutine process abstraction
+Summary:	Coroutine process abstraction
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		http://search.cpan.org/dist/%{module}
+Source0:	http://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/%{module}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
-BuildRequires:  perl-IO-AIO
-BuildRequires:  perl-AnyEvent >= 1:4.05
-BuildRequires:  perl-Guard
-BuildRequires:  perl-common-sense
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-IO-AIO
+BuildRequires:	perl-AnyEvent >= 1:4.05
+BuildRequires:	perl-Guard
+BuildRequires:	perl-common-sense
 #gw the test EV/t/01_unblock fails in 4.37:
 # http://rt.cpan.org/Ticket/Display.html?id=32475
 #BuildRequires:  perl-EV >= 2.0
@@ -28,21 +27,20 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 This module collection manages coroutines. Coroutines are similar to
 threads but don't run in parallel.
 
+%package	AnyEvent
+Summary:	Use Coro within an AnyEvent environment
+Group:		Development/Perl
 
-%package AnyEvent
-Summary: Use Coro within an AnyEvent environment
-Group: Development/Perl
-
-%description AnyEvent
+%description	AnyEvent
 This module integrates coroutines into any event loop supported by
 AnyEvent, combining event-based programming with coroutine-based
 programming in a natural way.
 
-%package BDB
-Summary: Truly asynchronous bdb access
-Group: Development/Perl
+%package	BDB
+Summary:	Truly asynchronous bdb access
+Group:		Development/Perl
 
-%description BDB
+%description	BDB
 This module implements a thin wrapper around the BDB module.
 
 Each BDB request that could block and doesn't get passed a callback
@@ -51,9 +49,9 @@ will no longer be the case.
 
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version} 
+%setup -q -n %{module}-%{upstream_version} 
 #gw wrong shell bang:
-sed -i "s^/opt/bin/perl^%_bindir/perl^" Coro/jit*pl
+sed -i "s^/opt/bin/perl^%{_bindir}/perl^" Coro/jit*pl
 
 %build
 echo -e  "n\nu\n" | %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -63,15 +61,10 @@ echo -e  "n\nu\n" | %{__perl} Makefile.PL INSTALLDIRS=vendor
 %{!?_without_check:make test}
 
 %install
-rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %files
-%defattr(-,root,root)
 %doc README.linux-glibc README Changes
 %dir %{perl_vendorarch}/Coro
 %{perl_vendorarch}/Coro/AIO.pm
@@ -119,11 +112,9 @@ rm -rf $RPM_BUILD_ROOT
 %_mandir/man3/Coro::Util.3pm*
 
 %files BDB
-%defattr(-,root,root)
 %{perl_vendorarch}/Coro/BDB.pm
 %{_mandir}/man3/Coro::BDB*
 
 %files AnyEvent
-%defattr(-,root,root)
 %{perl_vendorarch}/Coro/AnyEvent.pm
 %{_mandir}/man3/Coro::AnyEvent*
