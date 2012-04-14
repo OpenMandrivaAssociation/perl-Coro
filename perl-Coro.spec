@@ -1,10 +1,10 @@
 %define	module	Coro
-%define	upstream_version 6.07
+%define	upstream_version 6.08
 #define _without_check 1
 
 Name:		perl-%{module}
 Version:	%perl_convert_version %upstream_version
-Release:	4
+Release:	1
 Epoch:		2
 
 Summary:	Coroutine process abstraction
