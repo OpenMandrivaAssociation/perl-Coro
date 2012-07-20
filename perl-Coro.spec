@@ -4,7 +4,7 @@
 
 Name:		perl-%{module}
 Version:	%perl_convert_version %upstream_version
-Release:	1
+Release:	2
 Epoch:		2
 
 Summary:	Coroutine process abstraction
@@ -21,7 +21,7 @@ BuildRequires:	perl-common-sense
 #gw the test EV/t/01_unblock fails in 4.37:
 # http://rt.cpan.org/Ticket/Display.html?id=32475
 #BuildRequires:  perl-EV >= 2.0
-%define _requires_exceptions perl(Exporter::)\\|perl(Coro::Socket::)
+%define __noautoreq 'Exporter::|Coro::Socket::'
 
 %description
 This module collection manages coroutines. Coroutines are similar to
