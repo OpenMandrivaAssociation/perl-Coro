@@ -1,17 +1,17 @@
 %define	module	Coro
-%define	upstream_version 6.08
+%define upstream_version 6.31
 #define _without_check 1
 
 Name:		perl-%{module}
-Version:	%perl_convert_version %upstream_version
-Release:	2
+Version:	%perl_convert_version 6.31
+Release:	1
 Epoch:		2
 
 Summary:	Coroutine process abstraction
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{module}
-Source0:	http://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/%{module}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/authors/id/M/ML/MLEHMANN/Coro-6.31.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl-IO-AIO
@@ -407,4 +407,5 @@ echo -e  "n\nu\n" | %{__perl} Makefile.PL INSTALLDIRS=vendor
 * Fri Apr 20 2007 Götz Waschk <waschk@mandriva.org> 2:3.61-1mdv2008.0
 + Revision: 16010
 - new version
+
 
