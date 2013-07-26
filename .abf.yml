@@ -1,2 +1,4 @@
+removed_sources:
+  Coro-6.08.tar.gz: 7cfeed9184b1d96decbf764a76c3aa8f63a2e25d
 sources:
-  "Coro-6.08.tar.gz": 7cfeed9184b1d96decbf764a76c3aa8f63a2e25d
+  Coro-6.31.tar.gz: 37c5ca1d3faa7ac2ea4dd2db1e5a2af0b032b475
