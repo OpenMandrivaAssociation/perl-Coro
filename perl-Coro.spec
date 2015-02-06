@@ -4,7 +4,7 @@
 
 Name:		perl-%{module}
 Version:	%perl_convert_version 6.31
-Release:	2
+Release:	3
 Epoch:		2
 
 Summary:	Coroutine process abstraction
