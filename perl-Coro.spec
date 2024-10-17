@@ -10,7 +10,7 @@ Epoch:		2
 Summary:	Coroutine process abstraction
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{module}
+Url:		https://search.cpan.org/dist/%{module}
 Source0:	http://www.cpan.org/authors/id/M/ML/MLEHMANN/Coro-6.31.tar.gz
 
 BuildRequires:	perl-devel
