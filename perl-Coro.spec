@@ -13,6 +13,7 @@ Group:		Development/Perl
 Url:		https://search.cpan.org/dist/%{module}
 Source0:	http://www.cpan.org/authors/id/M/ML/MLEHMANN/Coro-6.31.tar.gz
 
+BuildRequires:	make
 BuildRequires:	perl-devel
 BuildRequires:	perl-IO-AIO
 BuildRequires:	perl-AnyEvent >= 1:4.05
