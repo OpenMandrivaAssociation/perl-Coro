@@ -1,17 +1,17 @@
 %define	module	Coro
-%define upstream_version 6.31
+%define upstream_version 6.57
 #define _without_check 1
 
 Name:		perl-%{module}
-Version:	%perl_convert_version 6.31
-Release:	3
+Version:	%{upstream_version}
+Release:	1
 Epoch:		2
 
 Summary:	Coroutine process abstraction
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{module}
-Source0:	http://www.cpan.org/authors/id/M/ML/MLEHMANN/Coro-6.31.tar.gz
+Url:		https://metacpan.org/dist/Coro
+Source0:	https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/Coro-6.57.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
