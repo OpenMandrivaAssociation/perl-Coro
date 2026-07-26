@@ -1,10 +1,9 @@
 %define	module	Coro
-%define upstream_version 6.57
 #define _without_check 1
 
 Name:		perl-%{module}
-Version:	%{upstream_version}
-Release:	1
+Version:	6.57
+Release:	2
 Epoch:		2
 
 Summary:	Coroutine process abstraction
@@ -50,7 +49,7 @@ will no longer be the case.
 
 
 %prep
-%setup -q -n %{module}-%{upstream_version} 
+%setup -q -n %{module}-%{version} 
 #gw wrong shell bang:
 sed -i "s^/opt/bin/perl^%{_bindir}/perl^" Coro/jit*pl
 
